@@ -1,0 +1,32 @@
+% --- Format Table of Contents ---
+\renewcommand{\contentsname}{ } % yes, the space IS necessary to center the title
+\tableofcontents
+\addtocontents{toc}{%
+   \hspace*{\fill} Page
+}
+\newpage
+
+% --- Format List of Tables ---
+\renewcommand{\listtablename}{}
+\listoftables
+\addcontentsline{toc}{chapter}{\uppercase{List of Tables}}
+\addtocontents{lot}{%
+   \noindent Table \hspace*{\fill} Page
+}
+\newpage
+
+% --- Format List of Figures ---
+\renewcommand{\listfigurename}{}
+\listoffigures
+\addcontentsline{toc}{chapter}{\uppercase{List of Figures}}
+\addtocontents{lof}{%
+   \noindent Figure \hspace*{\fill} Page
+}
+
+% --- Add 'CHAPTER' to toc after lot and lof entries ---
+\addtocontents{toc}{%
+   \noindent CHAPTER
+}
+
+% --- Start Chapter Section Formatting ---
+\mainmatter

@@ -1,0 +1,28 @@
+\def\approvalstretch{\ifcase\numberofmembers \or 1.5 \or 1.5 \or 1.5 \or 1.3 \or 1.2 \or 1.0 \or 0.85 \or 0.7 \or 0.6 \or 0.5\fi}
+
+\begin{center}
+COMMITTEE MEMBERSHIP
+\end{center}
+\par
+\vspace*{0.5in}
+
+\begin{tabular}{rp{3.7in}}
+TITLE:  &\title     \par\\
+AUTHOR: &\author     \par\\
+DATE SUBMITTED: &\degreemonth~\degreeyear  \par\\
+
+\vspace*{0.5in} \\
+
+COMMITTEE CHAIR:  &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\chair\end{flushleft}\end{minipage}  \\\\
+\ifnum\numberofmembers>1 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberA\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>2 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberB\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>3 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberC\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>4 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberD\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>5 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberE\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>6 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberF\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>7 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberG\end{flushleft}\end{minipage}     \\\\ \fi
+\ifnum\numberofmembers>8 COMMITTEE MEMBER: &\begin{minipage}[t]{3.7in}\linespread{\approvalstretch}\selectfont{}\begin{flushleft}\othermemberH\end{flushleft}\end{minipage}     \\\\ \fi
+
+\end{tabular}
+
+\newpage

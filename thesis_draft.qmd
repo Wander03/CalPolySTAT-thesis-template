@@ -1,0 +1,118 @@
+---
+format:
+  pdf:
+    documentclass: report
+    papersize: letter
+    fontsize: 12pt
+    mainfont: Times New Roman
+    geometry:
+      - left=1.5in
+      - right=1in
+      - top=1in
+      - bottom=1in
+    include-before-body:
+      - frontmatter/information.tex
+      - frontmatter/title-page.tex
+      - frontmatter/copyright-page.tex
+      - frontmatter/committee-page.tex
+      - frontmatter/abstract.tex
+      - frontmatter/acknowledgments.tex
+      - frontmatter/table-of-contents.tex
+    number-sections: true
+    citation-style: apa
+    bibliography: bibliography/example-bibliography.bib
+    csl: bibliography/apa-6th-edition.csl
+    include-in-header: frontmatter/formating.tex
+---
+
+```{r}
+#| lablel: set-up
+#| include: false # Use to hide code and resutls
+
+# I recommend having a hidden code chunk to prep any packages or data sets!
+
+library(tidyverse)
+library(kableExtra)
+
+data("starwars")
+```
+
+# Literature Review
+
+There will probably be lots of citations here for many articles or even software like R [@r_core_team_r_2024].
+
+# Analysis
+
+## How to Add Figures
+
+```{r}
+#| label: example-figure
+#| echo: false # Use to hide code but not results
+#| fig-cap: "Example Figure Title/Caption"
+
+starwars |>
+  filter(!is.na(height), !is.na(mass), !is.na(species)) |>
+  filter(species %in% (starwars |> count(species, sort = TRUE) |> slice_head(n = 2) |> pull(species))) |>
+  ggplot(aes(x = height, y = mass, color = species)) +
+  geom_point() +
+  labs(
+    title = "Height v. Mass for most Common Starwars Species", 
+    x = "Height",
+    y = "Mass",
+    color = "Species") +
+  theme_bw()
+```
+
+## How to Add Tables
+
+```{r}
+#| label: example-table
+#| echo: false # Use to hide code but not results
+#| tbl-cap: "Example Table Title/Caption"
+
+starwars |>
+  head(c(3, 3)) |>
+  kable()
+```
+
+# Conclusion
+
+Write something here I guess.
+
+## Computational Details
+
+The results in this paper were obtained using `R` 4.4.1. `R` itself and all 
+packages used are available from the Comprehensive `R` Archive Network (CRAN) at 
+https://CRAN.R-project.org/.
+
+# REFERENCES {.unnumbered}
+
+::: {#refs}
+:::
+
+\appendix
+
+<!-- Store original definitions formatting -->
+\let\oldclearpage\clearpage
+\let\oldcleardoublepage\cleardoublepage
+
+<!-- Disable page breaks -->
+\let\clearpage\relax
+\let\cleardoublepage\relax
+
+# Super Cool Fancy Function
+
+<!-- Restore original formatting -->
+\let\clearpage\oldclearpage
+\let\cleardoublepage\oldcleardoublepage
+
+```{r}
+# Add your fancy function here!
+```
+
+# Slightly Less Cool Fancy Something
+
+```{r}
+# Got more fancy functions, or figures, or tables, 
+# or pretty much anything?
+```

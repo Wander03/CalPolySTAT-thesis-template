@@ -1,0 +1,85 @@
+% --- Package Loading ---
+\usepackage{etoolbox}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+% --- Front Matter Numbering ---
+\pagenumbering{roman}
+
+% --- Format the titles: ToC, LoF, LoT ---  
+\renewcommand{\cfttoctitlefont}{\normalsize\MakeUppercase\hfill TABLE OF CONTENTS \hfill}
+\renewcommand{\cftlottitlefont}{\normalsize\MakeUppercase\hfill LIST OF TABLES \hfill}
+\renewcommand{\cftloftitlefont}{\normalsize\MakeUppercase\hfill LIST OF FIGURES \hfill}
+
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{10pt}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{10pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{10pt}
+
+% --- Main Matter Control ---
+\newcommand{\frontmatter}{}
+\newcommand{\mainmatter}{%
+  \clearpage
+  \pagenumbering{arabic}%
+  \setcounter{page}{1}%
+}
+
+% --- Appendix Formatting ---
+\let\oldappendix\appendix
+\renewcommand{\appendix}{%
+  \chapter*{\centering\normalsize\MakeUppercase{APPENDICES}}
+  \oldappendix
+  \renewcommand{\thechapter}{\Alph{chapter}}%
+  \addtocontents{toc}{APPENDICES\par}
+  \renewcommand{\cftchapfont}{\normalfont}
+  \renewcommand{\cftchappagefont}{\normalfont}
+  \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+  \setlength{\cftchapindent}{0pt}
+  \setlength{\cftbeforechapskip}{0pt}
+}
+
+% --- Chapter/Section Formatting ---
+\titleformat{\chapter}[display]
+  {\normalfont\centering}
+  {\chaptertitlename\ \thechapter}
+  {0pt}
+  {\MakeUppercase}
+\titleformat*{\section}{\normalfont\bfseries}
+\titleformat*{\subsection}{\normalfont\bfseries}
+\titleformat*{\subsubsection}{\normalfont\bfseries}
+\titlespacing{\chapter}{0pt}{0pt}{20pt} % {left}{beforesep}{aftersep}
+
+% --- Line Spacing ---
+\doublespacing
+
+% --- Chapter Page Style ---
+\makeatletter
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{plain}}{}{}
+\makeatother
+
+% --- Custom TOC Formatting for Appendix ---
+\addtocontents{toc}{%
+  \protect\renewcommand{\protect\cftchapfont}{\protect\normalfont}%
+  \protect\renewcommand{\protect\cftchappagefont}{\protect\normalfont}%
+  \protect\renewcommand{\protect\cftchapleader}{\protect\cftdotfill{\protect\cftdotsep}}%
+  \protect\renewcommand{\protect\cftchapindent}{0pt}%
+  \protect\renewcommand{\protect\cftbeforechapskip}{0pt}%
+}
+
+% --- Set link colors to black ---
+\makeatletter
+\AtBeginDocument{
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=black,
+    pdfborder={0 0 0}
+  }
+}
+\makeatother
