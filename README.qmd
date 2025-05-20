@@ -1,4 +1,8 @@
-# CalPolySTAT-thesis-template
+---
+title: "CalPolySTAT-thesis-template"
+format: html
+editor: source
+---
 
 The only files you should need to edit are:
 
