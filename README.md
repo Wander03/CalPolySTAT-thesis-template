@@ -1,6 +1,6 @@
 # CalPolySTAT-thesis-template
 
-Created by Andrew Kerr
+Created by Andrew Kerr :D
 
 The only files you should need to edit are:
 
