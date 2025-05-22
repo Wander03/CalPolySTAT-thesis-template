@@ -1,8 +1,10 @@
 # CalPolySTAT-thesis-template
 
+Created by Andrew Kerr
+
 The only files you should need to edit are:
 
--   frontmatter \> information.tex
+-   frontmatter/information.tex
 
 -   thesis_draft.qmd
 
@@ -62,6 +64,8 @@ Directly after the title of your first appendix section is:
 The above commands simply stop `#` from starting on a new page so
 `APPENDICIES` appears above the title of your first section, then
 re-allows `#` to start on a new page afterwords.
+
+If your thesis does not have an Appendix, remove this section!
 
 ## Example-bibliography.bib
 
