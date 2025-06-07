@@ -8,6 +8,8 @@ The only files you should need to edit are:
 
 -   thesis_draft.qmd
 
+When knitting to pdf, if you are getting a TexLive version error, try using the following command in your consol: `tinytex::reinstall_tinytex()`.
+
 ## information.tex
 
 This file holds all the information required for the "header" pages
