@@ -10,7 +10,7 @@
 \phantomsection
 \renewcommand{\listtablename}{}
 \listoftables
-\addcontentsline{toc}{chapter}{\uppercase{List of Tables}}
+\cftaddtitleline{toc}{chapter}{\uppercase{List of Tables}}{\romannumeral\numexpr\value{page}-1+\tocpagelegnth\relax}
 \addtocontents{lot}{%
    \noindent Table \hspace*{\fill} Page
 }
@@ -20,7 +20,7 @@
 \phantomsection
 \renewcommand{\listfigurename}{}
 \listoffigures
-\addcontentsline{toc}{chapter}{\uppercase{List of Figures}}
+\cftaddtitleline{toc}{chapter}{\uppercase{List of Figures}}{\romannumeral\numexpr\value{page}-1+\tocpagelegnth\relax}
 \addtocontents{lof}{%
    \noindent Figure \hspace*{\fill} Page
 }
