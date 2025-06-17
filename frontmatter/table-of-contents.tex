@@ -7,23 +7,27 @@
 \newpage
 
 % --- Format List of Tables ---
-\phantomsection
-\renewcommand{\listtablename}{}
-\listoftables
-\cftaddtitleline{toc}{chapter}{\uppercase{List of Tables}}{\romannumeral\numexpr\value{page}-1+\tocpagelegnth\relax}
-\addtocontents{lot}{%
-   \noindent Table \hspace*{\fill} Page
-}
-\newpage
+\ifnumcomp{\totflag}{=}{1}{%
+  \phantomsection
+  \renewcommand{\listtablename}{}
+  \listoftables
+  \cftaddtitleline{toc}{chapter}{\uppercase{List of Tables}}{\romannumeral\numexpr\value{page}-1+\tocpagelegnth\relax}
+  \addtocontents{lot}{%
+     \noindent Table \hspace*{\fill} Page
+  }
+  \newpage
+}{}
 
 % --- Format List of Figures ---
-\phantomsection
-\renewcommand{\listfigurename}{}
-\listoffigures
-\cftaddtitleline{toc}{chapter}{\uppercase{List of Figures}}{\romannumeral\numexpr\value{page}-1+\tocpagelegnth\relax}
-\addtocontents{lof}{%
-   \noindent Figure \hspace*{\fill} Page
-}
+\ifnumcomp{\tofflag}{=}{1}{%
+  \phantomsection
+  \renewcommand{\listfigurename}{}
+  \listoffigures
+  \cftaddtitleline{toc}{chapter}{\uppercase{List of Figures}}{\romannumeral\numexpr\value{page}-1+\tocpagelegnth\relax}
+  \addtocontents{lof}{%
+     \noindent Figure \hspace*{\fill} Page
+  }
+}{}
 
 % --- Add 'CHAPTER' to toc after lot and lof entries ---
 \addtocontents{toc}{%
