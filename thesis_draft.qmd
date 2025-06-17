@@ -27,7 +27,7 @@ format:
 
 ```{r}
 #| lablel: set-up
-#| include: false # Use to hide code and resutls
+#| include: false # Use to hide code and results
 
 # I recommend having a hidden code chunk to prep any packages or data sets!
 
